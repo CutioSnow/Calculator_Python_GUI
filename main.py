@@ -4,22 +4,23 @@ import tkinter.ttk as ttk
 #Initializes tkinter window
 root = tk.Tk()
 root.minsize(width=300,height=400) #set minimum height and width for root window
-root.maxsize(width=600,height=800) #Set maximum height and width of root window
+root.maxsize(width=450,height=600) #Set maximum height and width of root window
 root.propagate(False) #Disable propagation of window widgets
 root.aspect(3,4,3,4) #set desired aspect ratio (3:4)
 
 #Configure grid weight for relative design
-root.grid_rowconfigure(0,weight=0)
-root.grid_rowconfigure(1,weight=2)
+root.grid_rowconfigure(0,weight=1)
+root.grid_rowconfigure(1,weight=4)
 root.grid_columnconfigure(0,weight=1)
 
 #Display Frame used to contain calculator display label
-frm_calc_display = ttk.Frame(root,height=5)
+frm_calc_display = ttk.Frame(root)
 frm_calc_display.grid(row=0,column=0,sticky="nsew")
 
 #Creates calculator text label
-lbl_calculator_display = tk.Label(master=frm_calc_display, height=5, bg="white", justify="right")
-lbl_calculator_display.pack(fill="both") #fill x and ycoordinate space
+lbl_calculator_display = tk.Label(master=frm_calc_display, bg="white", 
+                                  anchor="e",padx=2, text="0.0")
+lbl_calculator_display.pack(fill="both",expand=True) #fill x and ycoordinate space
 
 #Frame acting as the master frame for the calculator button layout
 frm_calc_btn_layout = ttk.Frame(root)
