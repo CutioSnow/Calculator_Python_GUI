@@ -19,18 +19,20 @@ frm_calc_display.grid(row=0,column=0,sticky="nsew")
 
 #Creates calculator text label
 lbl_calculator_display = tk.Label(master=frm_calc_display, bg="white", 
-                                  anchor="e",padx=2, text="0.0")
-lbl_calculator_display.pack(fill="both",expand=True) #fill x and ycoordinate space
+                                  anchor="e",padx=2, text="\n0.0")
+lbl_calculator_display.pack(fill="both",expand=True) #fill x and y coordinate space
 
 #Frame acting as the master frame for the calculator button layout
 frm_calc_btn_layout = ttk.Frame(root)
 frm_calc_btn_layout.grid(row=1,column=0,sticky="nsew") #Fill both x and y space
 
 #Array defining calculator button layout
-calc_btn_set = [["%", "7", "8", "9", "÷"],
-                ["+/-", "4", "5", "6", "X"],
-                ["C", "1", "2", "3", "-"],
-                ["AC", "0", ".", "=", "+"]]
+calc_btn_set = [["%", "CE", "C", "⌫"],
+                ["⅟x", "X²", "√x", "÷"],
+                ["7", "8", "9", "X"],
+                ["4", "5", "6", "-"],
+                ["1", "2", "3", "+"],
+                ["+/-", "0", ".", "="]]
 
 #TODO: Stylize button layout
 #Generates a grid of buttons within the button layout master frame
